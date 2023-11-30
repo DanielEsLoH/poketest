@@ -26,23 +26,28 @@ class PokemonsControllerTest < ActionDispatch::IntegrationTest
       name: 'pikachu'
     }
 
-    assert_difference "Pokemon.count" do
-      post search_path, params: params
+    VCR.use_cassette("search_pikachu") do
+      assert_difference "Pokemon.count" do
+
+        post search_path, params: params
+      end
     end
 
     assert_equal "pikachu's number is 25", flash[:notice]
     assert_redirected_to root_path
   end
 
+
   test 'search for an invalid pokemon' do
     params = {
       name: 'pika'
     }
 
-    assert_no_difference "Pokemon.count", "No new pokemons created" do
-      post search_path, params: params
+    VCR.use_cassette("search_pika") do
+      assert_no_difference "Pokemon.count", "No new pokemons created" do
+        post search_path, params: params
+      end
     end
-
     assert_equal "No pokemon found", flash[:error]
     assert_redirected_to root_path
   end
@@ -52,9 +57,12 @@ class PokemonsControllerTest < ActionDispatch::IntegrationTest
       name: 'pika pika'
     }
 
-    assert_no_difference "Pokemon.count", "No new pokemons created" do
-      post search_path, params: params
+    VCR.use_cassette("search_pika_pika") do
+      assert_no_difference "Pokemon.count", "No new pokemons created" do
+        post search_path, params: params
+      end
     end
+
 
     assert_equal "No pokemon found", flash[:error]
     assert_redirected_to root_path

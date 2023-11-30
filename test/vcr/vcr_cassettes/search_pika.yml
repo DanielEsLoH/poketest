@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pokeapi.co/api/v2/pokemon/pika
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - pokeapi.co
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 30 Nov 2023 03:16:54 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '9'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=3600, s-maxage=3600
+      Etag:
+      - W/"9-0gXL1ngzMqISxa6S1zx3F4wtLyg"
+      Function-Execution-Id:
+      - qzsjuq972wjs
+      X-Cloud-Trace-Context:
+      - 5b7dc7df1ba1a6650db317dab9e156a3
+      X-Powered-By:
+      - Express
+      X-Served-By:
+      - cache-mia-kmia1760052-MIA
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Timer:
+      - S1701310958.904895,VS0,VE2
+      Vary:
+      - Accept-Encoding, x-fh-requested-host, accept-encoding
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Cf-Cache-Status:
+      - HIT
+      Age:
+      - '3257'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=PLEZDJZbRiWg%2BO5Btg0OwBQuWDhAclFfS4xTruHO8JZrR5iYyjbpygdFORis%2BWKigR%2BPOhGVVLGwyAQCshmXSOJdgvQQyXx5vaBafyzqxbsazfLA71eFMt%2B7OZCT"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82dfef2ebfe98dc1-MIA
+    body:
+      encoding: UTF-8
+      string: Not Found
+  recorded_at: Thu, 30 Nov 2023 03:16:11 GMT
+recorded_with: VCR 6.2.0
